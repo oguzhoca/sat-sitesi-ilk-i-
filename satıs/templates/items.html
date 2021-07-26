@@ -508,13 +508,14 @@
                                                 </div>
                                             </div>
                                         </div>
+                                        {% for item in items %}
                                         <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4">
                                             <div class="products-single fix">
                                                 <div class="box-img-hover">
                                                     <div class="type-lb">
-                                                        <p class="new">New</p>
+                                                        <h3 class="title"><a href="{% url 'item_detail' item.pk %}">{{item.name}}</a></h3>
                                                     </div>
-                                                    <img src="images/img-pro-03.jpg" class="img-fluid" alt="Image">
+                                                    <img src="{{items.image.url}}" class="img-fluid" alt="Image">
                                                     <div class="mask-icon">
                                                         <ul>
                                                             <li><a href="#" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
@@ -525,13 +526,14 @@
                                                     </div>
                                                 </div>
                                                 <div class="why-text">
-                                                    <h4>Lorem ipsum dolor sit amet</h4>
-                                                    <h5> $9.79</h5>
+                                                    <h4>{{item.description | truncatechars:80}}</h4>                                                    
+                                                    <h5> <del>{{item.indirimsiz_fiyat}}</del> ${{item.fiyat}}</h5>
                                                 </div>
                                             </div>
                                         </div>
+                                        {% endfor %}
                                     </div>
-                                </div>
+                                </div>                                
                                 <div role="tabpanel" class="tab-pane fade" id="list-view">
                                     <div class="list-view-box">
                                         <div class="row">
