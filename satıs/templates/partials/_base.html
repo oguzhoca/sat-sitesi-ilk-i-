@@ -1,5 +1,4 @@
 {% load static %}
-{% block content %}
 <!DOCTYPE html>
 <html lang="en">
 <!-- Basic -->
@@ -22,13 +21,13 @@
     <link rel="apple-touch-icon" href="{% static 'images/apple-touch-icon.png' %}">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="{% static 'bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
     <!-- Site CSS -->
-    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <!-- Responsive CSS -->
-    <link rel="stylesheet" href="{% static 'responsive.css' %}">
+    <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="{% static 'custom.css' %}">
+    <link rel="stylesheet" href="{% static 'css/custom.css' %}">
 
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -36,4 +35,9 @@
     <![endif]-->
 
 </head>
+{% include 'partials/_navbar.html' %}
+
+{% block content %}
 {% endblock %}
+
+{% include 'partials/_footer.html' %}
