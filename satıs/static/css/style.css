@@ -17,17 +17,17 @@
 /*------------------------------------------------------------------
     IMPORT FILES
 -------------------------------------------------------------------*/
+@import "../css/all.css";
+@import "../css/superslides.css";
+@import "../css/bootstrap-select.css";
+@import "../css/carousel-ticker.css";
+@import "../css/code_animate.css";
+@import "../css/bootsnav.css";
+@import "../css/owl.carousel.min.css";
+@import "../css/jquery-ui.css";
+@import "../css/nice-select.css";
+@import "../css/baguetteBox.min.css";
 
-@import url(all.css);
-@import url(superslides.css);
-@import url(bootstrap-select.css);
-@import url(carousel-ticker.css);
-@import url(code_animate.css);
-@import url(bootsnav.css);
-@import url(owl.carousel.min.css);
-@import url(jquery-ui.css);
-@import url(nice-select.css);
-@import url(baguetteBox.min.css);
 
 /*------------------------------------------------------------------
     SKELETON

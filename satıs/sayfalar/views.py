@@ -20,3 +20,15 @@ class ContactView(SuccessMessageMixin, FormView):
         form.save()
         return super().form_valid(form)
 
+class OdemeView(SuccessMessageMixin, FormView):
+    template_name = 'ödeme.html'
+    form_class = ContactForm
+    success_url = reverse_lazy('ödeme')
+    success_message = 'SİPARİŞİNİZİ ALDIK'
+
+    def form_valid(self, form):
+        form.save()
+        return super().form_valid(form)
+
+class AboutView(TemplateView):
+    template_name = 'about.html'
