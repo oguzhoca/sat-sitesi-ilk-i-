@@ -13,10 +13,10 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <h2>Shop</h2>
+                    <h2>Ürünler</h2>
                     <ul class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="#">Home</a></li>
-                        <li class="breadcrumb-item active">Shop</li>
+                        <li class="breadcrumb-item"><a href="{% url 'index' %}">Anasayfa</a></li>
+                        <li class="breadcrumb-item active">Ürünler</li>
                     </ul>
                 </div>
             </div>
@@ -171,6 +171,14 @@
                                 </div>
                                 <p>Showing all 4 results</p>
                             </div>
+                            <div class="widget-categories">
+                                <h3 class="widget-title">Categories</h3>
+                                <ul>
+                                    {% for Category in categories %}
+                                        <li><a href="#">{{Category.name}}</a></li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
                             <div class="col-12 col-sm-4 text-center text-sm-right">
                                 <ul class="nav nav-tabs ml-auto">
                                     <li>
@@ -201,10 +209,11 @@
                                                             <li><a href="#" data-toggle="tooltip" data-placement="right" title="Compare"><i class="fas fa-sync-alt"></i></a></li>
                                                             <li><a href="#" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
                                                         </ul>
-                                                        <a class="cart" href="#">Add to Cart</a>
+                                                        <a class="cart" href="#">Sepete Ekle</a>
                                                     </div>
                                                 </div>
                                                 <div class="why-text">
+                                                    <h3 class="title"><a href="{% url 'item_detail' item.pk %}">{{item.name}}</a></h3>
                                                     <h4>{{item.description | truncatechars:80}}</h4>                                                    
                                                     <h5> <del>{{item.indirimsiz_fiyat}}</del> ${{item.fiyat}}</h5>
                                                 </div>
@@ -320,9 +329,18 @@
         </div>
     </div>
     <!-- End Shop Page -->
+<nav aria-label="...">
+    <ul class="pagination pagination-lg">
+      <li class="page-item disabled">
+        <a class="page-link" href="#" tabindex="-1">1</a>
+      </li>
+      <li class="page-item"><a class="page-link" href="#">2</a></li>
+      <li class="page-item"><a class="page-link" href="#">3</a></li>
+    </ul>
+</nav>
 
     <!-- Start Instagram Feed  -->
-    <div class="instagram-box">
+    <!-- <div class="instagram-box">
         <div class="main-instagram owl-carousel owl-theme">
             <div class="item">
                 <div class="ins-inner-box">
@@ -405,6 +423,6 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
     <!-- End Instagram Feed  -->
 {% endblock %}

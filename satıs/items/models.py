@@ -8,6 +8,9 @@ class Category(models.Model):
 
     def __str__(self):
         return self.name
+    class Meta:
+        verbose_name= 'kategori'
+        verbose_name_plural= 'kategoriler'
 
 class Tag(models.Model):
     name = models.CharField(max_length=50, null=True)
@@ -28,7 +31,7 @@ class Item(models.Model):
     lezzeti = models.CharField(max_length=100, blank=True)
     indirimsiz_fiyat = models.CharField(max_length=100, blank=True)
     fiyat = models.CharField(max_length=100, blank=True)
-    stok = models.BooleanField(default=False)
+    stok = models.BooleanField(default=False, verbose_name='stokta')
     
     class Meta:
         verbose_name= 'ürün'

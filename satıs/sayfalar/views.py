@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.views.generic import TemplateView
-from . forms import ContactForm
+from . forms import ContactForm, OrderForm
 from django.views.generic.edit import FormView
 from django.urls import reverse_lazy
 from django.contrib.messages.views import SuccessMessageMixin
@@ -22,7 +22,7 @@ class ContactView(SuccessMessageMixin, FormView):
 
 class OdemeView(SuccessMessageMixin, FormView):
     template_name = 'ödeme.html'
-    form_class = ContactForm
+    form_class = OrderForm
     success_url = reverse_lazy('ödeme')
     success_message = 'SİPARİŞİNİZİ ALDIK'
 

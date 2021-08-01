@@ -24,7 +24,8 @@ def category_list(request, category_slug):
     context = {
         'items': items,
         'categories': categories,
-        'tags':tags
+        'tags':tags,
+        'category':Category
     }
 
     return render(request, 'items.html', context)

@@ -26,3 +26,31 @@ class ContactForm(forms.ModelForm):
     class Meta:
         model = Contact
         fields =  ['first_name', 'last_name', 'email', 'phone', 'message']
+
+
+
+class OrderForm(forms.ModelForm):
+    ad = forms.CharField(widget=forms.TextInput(attrs={
+        'class': 'form-control',
+        'placeholder': 'adınız'
+    }))
+    soyad = forms.CharField(widget=forms.TextInput(attrs={
+        'class': 'form-control',
+        'placeholder': 'soyadınız'
+    }))
+    email = forms.EmailField(widget=forms.EmailInput(attrs={
+        'class': 'form-control',
+        'placeholder': 'Mailiniz'
+    }))
+    telefon = forms.CharField(widget=forms.TextInput(attrs={
+        'class': 'form-control',
+        'placeholder': 'Telefon'
+    }))
+    sipariş_detay = forms.CharField(widget=forms.Textarea(attrs={
+        'class': 'form-control',
+        'placeholder': 'Sipariş Detayı'
+    }))
+
+    class Meta:
+        model = Contact
+        fields =  ['ad', 'soyad', 'email', 'telefon', 'sipariş_detay']
